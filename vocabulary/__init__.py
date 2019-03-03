@@ -1,0 +1,1 @@
+from .character_vocabulary import CharacterVocabulary, character_vocab, encode_character_sequence

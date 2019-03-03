@@ -1,0 +1,13 @@
+*.*~
+*/__pycache__
+
+# data
+data/*.zip
+data/train/
+data/validation/
+data/test/
+data/featurized/
+data/processed/
+
+# wandb
+wandb/
