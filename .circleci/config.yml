@@ -15,20 +15,19 @@ jobs:
             curl -s  https://packagecloud.io/install/repositories/github/git-lfs/script.deb.sh | sudo bash
             sudo apt-get install git-lfs
             git lfs install
+      - run:
+        name: Pull LFS Files
+        command: git lfs pull
 
-        - run:
-            name: Pull LFS Files
-            command: git lfs pull
+      - run:
+          name: install dependencies
+          command: |
+            sudo pip install --upgrade pip
+            sudo pip install pipenv
+            pipenv install --dev
 
-        - run:
-            name: install dependencies
-            command: |
-              sudo pip install --upgrade pip
-              sudo pip install pipenv
-              pipenv install --dev
-
-        - save_cache:
-            key: cache-{{ checksum "Pipfile.lock" }}
-            paths:
-              - ~/.local
-              - /usr/bin/git-lfsw
+      - save_cache:
+        key: cache-{{ checksum "Pipfile.lock" }}
+        paths:
+          - ~/.local
+          - /usr/bin/git-lfsw
