@@ -7,7 +7,7 @@ jobs:
       - checkout
 
       - restore_cache:
-        keys:
+          keys:
           - cache-{{ checksum "Pipfile.lock" }}
       - run:
           name: Install git lfs
