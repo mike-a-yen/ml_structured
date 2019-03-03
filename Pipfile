@@ -5,7 +5,7 @@ verify_ssl = true
 
 [dev-packages]
 pandas = "*"
-pyyaml = ">=4.2b1"
+pyyaml = "*"
 wandb = "*"
 
 [packages]
